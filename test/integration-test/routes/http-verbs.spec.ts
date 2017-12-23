@@ -75,7 +75,7 @@ describe("http routes", () => {
     }
 
     afterAll(async (done) => {
-        httpApplication.stop();
+        await httpApplication.stop();
         done();
     })
     

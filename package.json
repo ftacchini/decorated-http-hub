@@ -24,12 +24,12 @@
   "typings": "./dts/src/index.d.ts",
   "dependencies": {
     "@types/lodash": "^4.14.88",
-    "decorated-ts-hub": "^1.4.4",
+    "decorated-ts-hub": "^1.4.5",
     "http-hub": "^1.2.10",
     "inversify": "^3.0.0",
     "lodash": "^4.17.4",
     "reflect-metadata": "^0.1.10",
-    "ts-hub": "^1.8.5"
+    "ts-hub": "^1.8.6"
   },
   "devDependencies": {
     "@types/jasmine": "^2.6.0",
