@@ -1,6 +1,6 @@
 {
   "name": "decorated-http-hub",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Http hub implementation for the decorated framework",
   "main": "dist/src/index.js",
   "scripts": {
