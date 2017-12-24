@@ -5,7 +5,7 @@ import { HttpServer, DefaultHttpServerConfigurator, HttpRouteType, HttpVerb } fr
 import { DecoratedFrameworkBuilder, MetadataControllerLoader } from "decorated-ts-hub";
 import * as Http from "http";
 import "jasmine";
-
+/*
 var port = 8081;
 var controllerLoader = new MetadataControllerLoader(/(.*)middleware\-controller\.js$/); 
 
@@ -41,8 +41,12 @@ describe("http method middleware", () => {
 
     })
 
-    it("should call function afterwards", () => {
-            
+    it("should receive param casted by default", () => {
+
+    })
+
+    it("should receive param casted explicitly", () => {
+
     })
 
     it("should be sorted by priority", () => {
@@ -53,4 +57,4 @@ describe("http method middleware", () => {
         await httpApplication.stop();
         done();
     })
-})
+})*/

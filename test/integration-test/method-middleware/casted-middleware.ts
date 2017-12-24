@@ -1,10 +1,10 @@
+import { Activation } from './../activation';
 import { OperationsRegistryId, OperationsRegistry } from './../operations-registry';
 import { Handler } from 'ts-hub';
 import { ControllerMiddlewareMetadataBuilder, CastParameterTypes } from "decorated-ts-hub";
-import { injectable } from 'inversify';
+import { injectable, inject } from 'inversify';
 import { HttpConstructorMiddlewareBuilder } from 'http-hub';
 import "reflect-metadata";
-import { inject } from 'inversify/dts/annotation/inject';
 
 export class MiddlewareInfo {
     middlewareConfig: number;
@@ -19,7 +19,7 @@ export class CastedMiddleware implements Handler<MiddlewareInfo> {
 
     @CastParameterTypes()
     public handleRequest(info: MiddlewareInfo, extraParam: string): any {
-        this.operationsRegistry.register("castedMiddlewareBeingCalled");
+        this.operationsRegistry.register(new Activation("castedMiddlewareBeingCalled", [info, extraParam]));
     }
 }
 

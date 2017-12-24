@@ -1,3 +1,4 @@
+import { Activation } from './../activation';
 import { ParamsMiddlewareHandler } from './params-middleware';
 import { OperationsRegistry, OperationsRegistryId } from './../operations-registry';
 import { inject, injectable } from 'inversify';
@@ -15,19 +16,19 @@ export class HttpMiddlewareController {
     @HttpAll()
     @CastedMiddlewareHandler({ middlewareConfig: 1 })
     public castedMiddlewareMethod() {
-        this.operationsRegistry.register("castedMiddlewareMethodBeingCalled");
+        this.operationsRegistry.register(new Activation("castedMiddlewareMethodBeingCalled", []));
     }
 
     @HttpAll()
     @ParamsMiddlewareHandler({ middlewareConfig: 2 })
     public paramsMiddlewareMethod() {
-        this.operationsRegistry.register("paramsMiddlewareMethodBeingCalled");
+        this.operationsRegistry.register(new Activation("paramsMiddlewareMethodBeingCalled", []));
     }
 
     @HttpAll()
     @CastedMiddlewareHandler({ middlewareConfig: 1 })
     @ParamsMiddlewareHandler({ middlewareConfig: 2 })
     public multipleMiddlewareMethod() {
-        this.operationsRegistry.register("multipleMiddlewareMethodBeingCalled");
+        this.operationsRegistry.register(new Activation("multipleMiddlewareMethodBeingCalled", []));
     }
 }
